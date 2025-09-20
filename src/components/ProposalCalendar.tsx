@@ -62,11 +62,11 @@ const subMonths = (date: Date, months: number) => {
 const matchedEvents = [
   {
     id: 1,
-    name: "TechCrunch Disrupt 2024",
+    name: "TechCrunch Disrupt 2025",
     type: "Conference",
     location: "San Francisco, CA",
-    date: "2024-03-15",
-    deadline: "2024-02-01",
+    date: "2025-10-15",
+    deadline: "2025-09-25",
     description:
       "The premier startup conference featuring top entrepreneurs, investors, and tech leaders",
     matchScore: 95,
@@ -93,8 +93,8 @@ const matchedEvents = [
     name: "Y Combinator Demo Day",
     type: "Accelerator",
     location: "Mountain View, CA",
-    date: "2024-04-20",
-    deadline: "2024-01-15",
+    date: "2025-11-20",
+    deadline: "2025-09-30",
     description: "Exclusive demo day for YC alumni and portfolio companies",
     matchScore: 88,
     eligibility: {
@@ -120,8 +120,8 @@ const matchedEvents = [
     name: "Startup Grind Global Conference",
     type: "Networking",
     location: "Silicon Valley, CA",
-    date: "2024-02-28",
-    deadline: "2024-01-30",
+    date: "2025-09-28",
+    deadline: "2025-09-22",
     description:
       "Global startup community gathering with founders, investors, and ecosystem partners",
     matchScore: 72,
@@ -145,11 +145,11 @@ const matchedEvents = [
   },
   {
     id: 4,
-    name: "SaaS Summit 2024",
+    name: "SaaS Summit 2025",
     type: "Industry Conference",
     location: "Austin, TX",
-    date: "2024-05-10",
-    deadline: "2024-03-15",
+    date: "2025-12-10",
+    deadline: "2025-10-15",
     description:
       "The definitive conference for SaaS founders, covering growth, metrics, and scaling",
     matchScore: 85,
@@ -176,11 +176,11 @@ const matchedEvents = [
 const fundingOpportunities = [
   {
     id: 1,
-    name: "Techstars Boston 2024",
+    name: "Techstars Boston 2025",
     type: "Accelerator",
     amount: "$120,000",
     equity: "6%",
-    deadline: "2024-02-15",
+    deadline: "2025-09-27",
     matchScore: 92,
     duration: "3 months",
     location: "Boston, MA",
@@ -191,11 +191,11 @@ const fundingOpportunities = [
   },
   {
     id: 2,
-    name: "AWS Startup Challenge",
+    name: "AWS Startup Challenge 2025",
     type: "Competition",
     amount: "$100,000",
     equity: "0%",
-    deadline: "2024-01-31",
+    deadline: "2025-09-25",
     matchScore: 78,
     duration: "6 months",
     location: "Remote",
@@ -211,11 +211,11 @@ const fundingOpportunities = [
   },
   {
     id: 3,
-    name: "Google for Startups Accelerator",
+    name: "Google for Startups Accelerator 2025",
     type: "Accelerator",
     amount: "$200,000",
     equity: "0%",
-    deadline: "2024-03-01",
+    deadline: "2025-10-05",
     matchScore: 85,
     duration: "3 months",
     location: "Mountain View, CA",
@@ -236,10 +236,10 @@ const applicationTracking = [
     id: 1,
     eventName: "TechCrunch Disrupt",
     status: "submitted",
-    submittedDate: "2024-01-10",
+    submittedDate: "2025-09-10",
     nextStep: "Awaiting review",
     progress: 25,
-    deadline: "2024-02-01",
+    deadline: "2025-09-25",
   },
   {
     id: 2,
@@ -248,16 +248,16 @@ const applicationTracking = [
     submittedDate: null,
     nextStep: "Complete application",
     progress: 60,
-    deadline: "2024-01-30",
+    deadline: "2025-09-22",
   },
   {
     id: 3,
     eventName: "SaaS Summit",
     status: "registered",
-    submittedDate: "2024-01-08",
+    submittedDate: "2025-09-08",
     nextStep: "Prepare presentation",
     progress: 100,
-    deadline: "2024-03-15",
+    deadline: "2025-10-15",
   },
 ];
 
@@ -398,7 +398,7 @@ export function ProposalCalendar() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Calendar */}
           <div className="space-y-4">
-            <div className="flex items-center justify-between">
+            {/* <div className="flex items-center justify-between">
               <h3 className="text-lg">{formatMonth(currentMonth)}</h3>
               <div className="flex gap-1">
                 <Button
@@ -416,14 +416,12 @@ export function ProposalCalendar() {
                   <ChevronRight className="h-4 w-4" />
                 </Button>
               </div>
-            </div>
+            </div> */}
 
             <Calendar
               mode="single"
               selected={selectedDate}
               onSelect={setSelectedDate}
-              month={currentMonth}
-              onMonthChange={setCurrentMonth}
               className="rounded-md border"
               modifiers={{
                 hasSubmitted: (date) =>
